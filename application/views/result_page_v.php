@@ -23,15 +23,15 @@
 		<td><?php echo $value->weight;?>кг</td>
 		<td><?php echo $value->price?>грн</td>
 		<td><?php if ($value->sale) echo $value->sale."%"; else echo "Нет"?></td>
-		<td><a href="main/editproduct/<?php echo $value->id?>" id="<?php echo $value->id?>">Edit</a> <a href="main/deleteproduct/<?php echo $value->id?>">Delete</a></td>
+		<td><a href="/main/editproduct/<?php echo $value->id?>" id="<?php echo $value->id?>">Edit</a> <a href="/main/deleteproduct/<?php echo $value->id?>">Delete</a></td>
 	</tr>
 	<?php }?>
 </table>
 
 <div>
 	<ul>
-		<li><a href="main/addcategory">Добавить категорию</a></li>
-		<li><a href='main/editcategory'>Редактировать категории</a></li>
-		<li><a href="main/addproduct">Добавить товар</a></li>
+		<li><a href="/main/addcategory">Добавить категорию</a></li>
+		<li><a href='/main/categorylist'>Редактировать категории</a></li>
+		<li><a href="/main/addproduct">Добавить товар</a></li>
 	</ul>
 </div>

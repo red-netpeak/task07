@@ -2,7 +2,7 @@
 
 <?php echo validation_errors(); ?>
 
-<?php echo form_open('main/editcategory'); ?>
+<?php echo form_open('/editcategory'); ?>
 	<input type="text" name="category" placeholder="Название категории" value="<?php echo set_value('category');?>">
 	<label for="marginality">Категория наценки</label>
 	<select name="marginality" id="">
