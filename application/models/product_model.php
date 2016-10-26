@@ -18,7 +18,9 @@ class Product_model extends CI_Model {
 	public function getElementById($id) {
 		$this->db->where('id', $id);
 
-		return $this->db->get($this->table)->result();
+		$query = $this->db->get($this->table)->result();
+
+		return $query;
 	}
 
 	public function deleteProductById($id) {
@@ -28,5 +30,9 @@ class Product_model extends CI_Model {
 
 	public function addNewProduct($array) {
 		$this->db->insert($this->table, $array);
+	}
+
+	public function updateThisProduct($id, $update) {
+		$this->db->where('id', $id)->update($this->table, $update);
 	}
 }

@@ -9,14 +9,16 @@
 		<th>Категория наценки</th>
 		<th>Вознаграждение</th>
 	</tr>
-	<?php var_dump($query); //foreach($result as $value) {?>
+	<?foreach($query as $value) : ?>
 	<tr>
 		<td><?php echo ++$counter;?></td>
-		<td><?php //echo $value->product;?></td>
-		<td><?php //echo $value->category;?></td>
-		<td><?php //echo $value->image?></td>
-		<td><?php //echo $value->color;?></td>
-		<td><a href="/main/editproduct/<?php //echo $value->id?>" id="<?php //echo $value->id?>">Edit</a> <a href="/main/deleteproduct/<?php //echo $value->id?>">Delete</a></td>
+		<td><?php echo $value->id;?></td>
+		<td><?php echo $value->category;?></td>
+		<td><?php echo $value->marginality?></td>
+		<td><?php echo $value->remuneration;?></td>
+		<td><a href="/main/editcategory/<?php echo $value->id?>" id="<?php echo $value->id?>">Edit</a> <a href="/main/deletecategory/<?php echo $value->id?>">Delete</a></td>
 	</tr>
-	<?php //}?>
+	<?php endforeach; ?>
 </table>
+
+<a href='/main'>Вернуться на главную</a>

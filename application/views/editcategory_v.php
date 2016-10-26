@@ -1,18 +1,19 @@
+<script src="/sources/js/script.js"></script>
 <h3>Редактирование категории товара</h3>
 
 <?php echo validation_errors(); ?>
 
-<?php echo form_open('/editcategory'); ?>
-	<input type="text" name="category" placeholder="Название категории" value="<?php echo set_value('category');?>">
+<?php echo form_open("http://codeigniter/main/editcategory/{$query['id']}"); ?>
+	<input type="text" name="category" placeholder="Название категории" value="<?php echo $query['category'];?>">
 	<label for="marginality">Категория наценки</label>
-	<select name="marginality" id="">
-		<option value="A">A</option>
-		<option value="B">B</option>
-		<option value="C">C</option>
-		<option value="D">D</option>
+	<select name="marginality" id="<?php echo $marginality_now?>">
+		<?php foreach($marginality_now as $value) : ?>
+			<option value="<?php echo $value?>"<?php if($value == $query['marginality']) echo "selected='selected'";?>><?php echo $value?></option>
+		<?php endforeach;?>
 	</select>
-	<input name='renumeration' type="number" placeholder="Вознаграждение" value='<?php echo set_value('category');?>'>
+	<input name='remuneration' type="number" placeholder="Вознаграждение" value='<?php echo $query['remuneration'];?>'>
 	<input name="confirm" type="submit" value="Confirm">
 <?php echo form_close();?> 
 
-<a href="index">Вернуться к товарам</a>
+<a href="/main">Вернуться к товарам</a>
+<p><?php echo $result;?></p>
