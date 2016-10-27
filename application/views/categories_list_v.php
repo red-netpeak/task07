@@ -9,7 +9,7 @@
 		<th>Категория наценки</th>
 		<th>Вознаграждение</th>
 	</tr>
-	<?foreach($query as $value) : ?>
+	<?php foreach($query as $value) : ?>
 	<tr>
 		<td><?php echo ++$counter;?></td>
 		<td><?php echo $value->id;?></td>
